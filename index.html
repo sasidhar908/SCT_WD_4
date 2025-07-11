@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📋 To-Do Task Manager</h1>
+
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Enter a new task..." required />
+      <input type="datetime-local" id="task-due" />
+      <select id="priority-select">
+        <option value="low">🟢 Low</option>
+        <option value="medium">🟠 Medium</option>
+        <option value="high">🔴 High</option>
+      </select>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <input type="text" id="search-input" placeholder="🔍 Search tasks..." />
+
+    <div class="controls">
+      <button onclick="sortByDate()">Sort by Date</button>
+      <button onclick="sortByPriority()">Sort by Priority</button>
+      <button onclick="clearCompleted()">Clear Completed</button>
+      <button id="toggle-theme">🌓 Toggle Theme</button>
+    </div>
+
+    <ul id="task-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
