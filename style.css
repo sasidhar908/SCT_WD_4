@@ -1,0 +1,130 @@
+:root {
+  --bg: #1f1f2e;
+  --bg-container: #292944;
+  --text: #fff;
+  --highlight: #ffc107;
+  --task-bg: #393960;
+  --completed-bg: #2e7d32;
+  --search-bg: #f1f1f1;
+  --btn-color: #4caf50;
+  --btn-hover: #45a049;
+}
+
+body.light-mode {
+  --bg: #f9f9f9;
+  --bg-container: #ffffff;
+  --text: #1a1a1a;
+  --highlight: #ff9800;
+  --task-bg: #eaeaea;
+  --completed-bg: #c8e6c9;
+  --search-bg: #ffffff;
+  --btn-color: #2196f3;
+  --btn-hover: #1976d2;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  transition: 0.3s;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--bg-container);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+h1 {
+  text-align: center;
+  color: var(--highlight);
+  margin-bottom: 1.5rem;
+}
+
+form, .controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+form input, select, button, #search-input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+}
+
+#task-input, #task-due, #priority-select, #search-input {
+  background-color: var(--search-bg);
+  color: var(--text);
+}
+
+form button, .controls button {
+  background-color: var(--btn-color);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover, .controls button:hover {
+  background-color: var(--btn-hover);
+}
+
+#task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task {
+  background-color: var(--task-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.task.completed {
+  background-color: var(--completed-bg);
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.task-content {
+  flex-grow: 1;
+}
+
+.task-content input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+}
+
+.task-date {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.priority-high { color: #ff5252; font-weight: bold; }
+.priority-medium { color: #ffc107; font-weight: bold; }
+.priority-low { color: #81c784; font-weight: bold; }
+
+.task-actions button {
+  background: transparent;
+  color: inherit;
+  border: none;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.task-actions button:hover {
+  color: var(--highlight);
+}
